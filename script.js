@@ -1,3 +1,11 @@
+function SetHoverEffect (gridSquare) {
+
+    gridSquare.addEventListener("mouseover", (event) => {
+        gridSquare.style.backgroundColor = "blue";
+    });
+
+}
+
 function createGrid () {
 
     let container = document.querySelector(".container");
@@ -11,11 +19,13 @@ function createGrid () {
             let gridSquare = document.createElement("div");
             gridSquare.classList.add("grid-square");
             gridRow.appendChild(gridSquare);
+            SetHoverEffect(gridSquare);
         }
 
         container.appendChild(gridRow);
 
     }
+
 }
 
 createGrid();
