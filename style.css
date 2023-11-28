@@ -7,9 +7,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     width: 100%;
     margin: 0;
+}
+
+.grid-size-btn {
+    font-size: 2.5vw;
 }
 
 .container {
