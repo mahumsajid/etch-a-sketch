@@ -28,6 +28,19 @@ function createGrid (size = 16) {
 
 }
 
+function removeGrid () {
+
+    let container = document.querySelector(".container");
+
+    let gridRows = document.querySelectorAll(".grid-row");
+    let gridSquares = document.querySelectorAll(".grid-square");
+
+    gridRows.forEach((gridRow) => {
+        container.removeChild(gridRow);
+    });
+
+}
+
 function changeGridSize () {
     let size = prompt("Enter the size you want to your square grid to be (cannot be a number less than 1 or greater than 99): ");
     
@@ -39,8 +52,8 @@ function changeGridSize () {
         let size = prompt("Please enter a valid size (it cannot be over 99 or less than 1)")
     }
 
-    
 
+    removeGrid();
     createGrid(size);
 
 }
