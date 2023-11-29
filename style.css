@@ -18,6 +18,8 @@ body {
 }
 
 .container {
+    width: 640px;
+    height: 640px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -25,11 +27,11 @@ body {
 
 .grid-row {
     display: flex;
+    flex: 1;
 }
 
 .grid-square {
-    width: 40px;
-    height: 40px;
     background-color: white;
     border: black 2px solid;
+    flex: 1;
 }
