@@ -1,3 +1,5 @@
+let currentSize;
+
 function SetHoverEffect (gridSquare) {
 
     gridSquare.addEventListener("mouseover", (event) => {
@@ -17,7 +19,7 @@ function createGrid (size = 16) {
 
         for (let j = 0; j < size; j++) {
             let gridSquare = document.createElement("div");
-            gridSquare.classList.add("grid-square");
+            gridSquare.classList.add("grid-square", `row${i+1}`);
             gridRow.appendChild(gridSquare);
             SetHoverEffect(gridSquare);
         }
@@ -31,9 +33,7 @@ function createGrid (size = 16) {
 function removeGrid () {
 
     let container = document.querySelector(".container");
-
     let gridRows = document.querySelectorAll(".grid-row");
-    let gridSquares = document.querySelectorAll(".grid-square");
 
     gridRows.forEach((gridRow) => {
         container.removeChild(gridRow);
@@ -42,19 +42,18 @@ function removeGrid () {
 }
 
 function changeGridSize () {
-    let size = prompt("Enter the size you want to your square grid to be (cannot be a number less than 1 or greater than 99): ");
+    let newSize = prompt("Enter the size you want to your square grid to be (cannot be a number less than 1 or greater than 99): ");
     
-    if (size === null) {
+    if (newSize === null) {
         return;
     }
 
-    while(+size >= 100 || +size <= 0) {
-        let size = prompt("Please enter a valid size (it cannot be over 99 or less than 1)")
+    while(+newSize >= 100 || +newSize <= 0) {
+        let newSize = prompt("Please enter a valid size (it cannot be over 99 or less than 1)")
     }
 
-
     removeGrid();
-    createGrid(size);
+    createGrid(newSize);
 
 }
 
