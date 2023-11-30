@@ -1,8 +1,8 @@
-let currentSize;
+let colorPercentage = 90;
 
 function SetHoverEffect (gridSquare) {
 
-    gridSquare.addEventListener("mouseover", (event) => {
+    gridSquare.addEventListener("mouseover", () => {
         gridSquare.style.backgroundColor = "blue";
     });
 
@@ -59,13 +59,33 @@ function changeGridSize () {
 
 function clearGrid () {
 
-    let container = document.querySelector(".container");
-    let gridRows = document.querySelectorAll(".grid-row");
     let gridSquares = document.querySelectorAll(".grid-square");
 
     gridSquares.forEach((gridSquare) => {
         gridSquare.style.backgroundColor = "white";
     });
+
+}
+
+function random () {
+    return Math.floor(Math.random() * 361);
+}
+
+function darken () {
+
+    let gridSquares = document.querySelectorAll(".grid-square");
+    let startColor = random();
+
+    gridSquares.forEach((gridSquare) => {
+        
+        gridSquare.addEventListener("mouseover", () => {
+
+            gridSquare.style.backgroundColor = `hsl(${startColor},100%,${colorPercentage}%)`;
+            colorPercentage -= 10;
+
+        });
+    });
+
 }
 
 createGrid();
