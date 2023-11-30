@@ -69,7 +69,7 @@ function random () {
     return Math.floor(Math.random() * 361);
 }
 
-function darkenColor () {
+function ombreEffect () {
 
     let colorPercentage = 90;
 
@@ -78,7 +78,6 @@ function darkenColor () {
 
     gridSquares.forEach((gridSquare) => {
         
-        console.log(colorPercentage);
         gridSquare.addEventListener("mouseover", () => {
 
             if (colorPercentage >= 0) {
@@ -93,7 +92,7 @@ function darkenColor () {
 
 }
 
-function randomColor () {
+function randomEffect () {
 
     let gridSquares = document.querySelectorAll(".grid-square");
 
