@@ -42,19 +42,30 @@ function removeGrid () {
 }
 
 function changeGridSize () {
-    let newSize = prompt("Enter the size you want to your square grid to be (cannot be a number less than 1 or greater than 99): ");
+    let newSize = prompt("Enter the size you want to your square grid to be (cannot be a number less than 1 or greater than 100): ");
     
     if (newSize === null) {
         return;
     }
 
-    while(+newSize >= 100 || +newSize <= 0) {
-        let newSize = prompt("Please enter a valid size (it cannot be over 99 or less than 1)")
+    while(+newSize > 100 || +newSize < 1) {
+        let newSize = prompt("Please enter a valid size (it cannot be greater than 100 or less than 1)")
     }
 
     removeGrid();
     createGrid(newSize);
 
+}
+
+function clearGrid () {
+
+    let container = document.querySelector(".container");
+    let gridRows = document.querySelectorAll(".grid-row");
+    let gridSquares = document.querySelectorAll(".grid-square");
+
+    gridSquares.forEach((gridSquare) => {
+        gridSquare.style.backgroundColor = "white";
+    });
 }
 
 createGrid();
