@@ -71,7 +71,7 @@ function random () {
     return Math.floor(Math.random() * 361);
 }
 
-function darken () {
+function darkenColor () {
 
     let gridSquares = document.querySelectorAll(".grid-square");
     let startColor = random();
@@ -81,6 +81,22 @@ function darken () {
         gridSquare.addEventListener("mouseover", () => {
 
             gridSquare.style.backgroundColor = `hsl(${startColor},100%,${colorPercentage}%)`;
+            colorPercentage -= 10;
+
+        });
+    });
+
+}
+
+function randomColor () {
+
+    let gridSquares = document.querySelectorAll(".grid-square");
+
+    gridSquares.forEach((gridSquare) => {
+        
+        gridSquare.addEventListener("mouseover", () => {
+
+            gridSquare.style.backgroundColor = `hsl(${random()},100%,50%)`;
             colorPercentage -= 10;
 
         });
