@@ -1,5 +1,3 @@
-let colorPercentage = 90;
-
 function SetHoverEffect (gridSquare) {
 
     gridSquare.addEventListener("mouseover", () => {
@@ -73,16 +71,23 @@ function random () {
 
 function darkenColor () {
 
+    let colorPercentage = 90;
+
     let gridSquares = document.querySelectorAll(".grid-square");
     let startColor = random();
 
     gridSquares.forEach((gridSquare) => {
         
+        console.log(colorPercentage);
         gridSquare.addEventListener("mouseover", () => {
 
-            gridSquare.style.backgroundColor = `hsl(${startColor},100%,${colorPercentage}%)`;
-            colorPercentage -= 10;
-
+            if (colorPercentage >= 0) {
+                gridSquare.style.backgroundColor = `hsl(${startColor},100%,${colorPercentage}%)`;
+                colorPercentage -= 10;
+            } else {
+                colorPercentage = 90;
+                gridSquare.style.backgroundColor = `hsl(${startColor},100%,${colorPercentage}%)`;
+            }
         });
     });
 
@@ -97,7 +102,6 @@ function randomColor () {
         gridSquare.addEventListener("mouseover", () => {
 
             gridSquare.style.backgroundColor = `hsl(${random()},100%,50%)`;
-            colorPercentage -= 10;
 
         });
     });
