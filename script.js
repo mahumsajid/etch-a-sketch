@@ -69,7 +69,7 @@ function random () {
     return Math.floor(Math.random() * 361);
 }
 
-function ombreEffect () {
+function setOmbreEffect () {
 
     let colorPercentage = 90;
 
@@ -92,7 +92,7 @@ function ombreEffect () {
 
 }
 
-function randomEffect () {
+function setRandomEffect () {
 
     let gridSquares = document.querySelectorAll(".grid-square");
 
@@ -101,6 +101,21 @@ function randomEffect () {
         gridSquare.addEventListener("mouseover", () => {
 
             gridSquare.style.backgroundColor = `hsl(${random()},100%,50%)`;
+
+        });
+    });
+
+}
+
+function setBlackEffect () {
+
+    let gridSquares = document.querySelectorAll(".grid-square");
+
+    gridSquares.forEach((gridSquare) => {
+        
+        gridSquare.addEventListener("mouseover", () => {
+
+            gridSquare.style.backgroundColor = "black";
 
         });
     });
