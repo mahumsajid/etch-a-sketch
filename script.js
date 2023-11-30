@@ -1,7 +1,7 @@
 function SetHoverEffect (gridSquare) {
 
     gridSquare.addEventListener("mouseover", () => {
-        gridSquare.style.backgroundColor = "blue";
+        gridSquare.style.backgroundColor = "black";
     });
 
 }

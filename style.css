@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: red;
+    background-color: lightyellow;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,6 +23,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    border: black 1px solid;
 }
 
 .grid-row {
@@ -32,6 +33,6 @@ body {
 
 .grid-square {
     background-color: white;
-    border: black 2px solid;
+    border: black 1px solid;
     flex: 1;
 }
