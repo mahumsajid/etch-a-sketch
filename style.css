@@ -13,21 +13,50 @@ body {
     margin: 0;
 }
 
-.buttons {
-    width: 640px;
+.buttons, .effect-buttons {
+    width: 608px;
 }
 
-.grid-size-btn {
-    font-size: 2.5vw;
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.effect-buttons {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.effect {
+    text-align: center;
+    padding: 10px;
+    width: 170px;
+    font-size: 22px;
+    font-weight: bolder;
+    background-color: rgb(250, 219, 250);
+    border-radius: 8px;
+    border: black 3px solid;
+}
+
+.grid-size-btn, .clear-grid {
+    padding: 15px;
+    width: 220px;
+    background-color: rgb(250, 219, 250);
+    font-size: 25px;
+    font-weight: bolder;
+    border-radius: 8px;
+    border: black 3px solid;
 }
 
 .container {
-    width: 640px;
-    height: 640px;
+    width: 608px;
+    height: 608px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    border: black 1px solid;
+    border: black 5px solid;
 }
 
 .grid-row {

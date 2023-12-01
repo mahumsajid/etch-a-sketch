@@ -39,7 +39,7 @@ function removeGrid () {
 
 }
 
-function changeGridSize () {
+function setGridSize () {
     let newSize = prompt("Enter the size you want to your square grid to be (cannot be a number less than 1 or greater than 100): ");
     
     if (newSize === null) {

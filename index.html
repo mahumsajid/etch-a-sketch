@@ -6,13 +6,15 @@
             <script src="./script.js" defer></script>
         </head>
         <body>
-            <div class="buttons">
-                <button class="grid-size-btn" onclick="changeGridSize()">Change Grid Size</button>
-                <button onclick="setBlackEffect()">black</button>
-                <button onclick="setRandomEffect()">Random</button>
-                <button onclick="setOmbreEffect()">Ombré</button>
-                <button class="clear-grid" onclick="clearGrid()">Clear</button>
+            <div class="effect-buttons">
+                <button class="effect" onclick="setBlackEffect()">BLACK</button>
+                <button class="effect" onclick="setRandomEffect()">RANDOM</button>
+                <button class="effect" onclick="setOmbreEffect()">OMBRÉ</button>
             </div>
             <div class="container"></div>
+            <div class="buttons">
+                <button class="grid-size-btn" onclick="setGridSize()">SET GRID SIZE</button>
+                <button class="clear-grid" onclick="clearGrid()">CLEAR</button>
+            </div>
         </body>
     </html>
