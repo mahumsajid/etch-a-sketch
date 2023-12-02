@@ -1,6 +1,6 @@
 function SetHoverEffect (gridSquare) {
 
-    gridSquare.addEventListener("mouseover", () => {
+    gridSquare.addEventListener("mouseenter", () => {
         gridSquare.style.backgroundColor = "black";
     });
 
@@ -17,7 +17,7 @@ function createGrid (size = 16) {
 
         for (let j = 0; j < size; j++) {
             let gridSquare = document.createElement("div");
-            gridSquare.classList.add("grid-square", `row${i+1}`);
+            gridSquare.classList.add("grid-square");
             gridRow.appendChild(gridSquare);
             SetHoverEffect(gridSquare);
         }
@@ -78,7 +78,7 @@ function setOmbreEffect () {
 
     gridSquares.forEach((gridSquare) => {
         
-        gridSquare.addEventListener("mouseover", () => {
+        gridSquare.addEventListener("mouseenter", () => {
 
             if (colorPercentage >= 0) {
                 gridSquare.style.backgroundColor = `hsl(${startColor},100%,${colorPercentage}%)`;
@@ -98,7 +98,7 @@ function setRandomEffect () {
 
     gridSquares.forEach((gridSquare) => {
         
-        gridSquare.addEventListener("mouseover", () => {
+        gridSquare.addEventListener("mouseenter", () => {
 
             gridSquare.style.backgroundColor = `hsl(${random()},100%,50%)`;
 
@@ -113,7 +113,7 @@ function setBlackEffect () {
 
     gridSquares.forEach((gridSquare) => {
         
-        gridSquare.addEventListener("mouseover", () => {
+        gridSquare.addEventListener("mouseenter", () => {
 
             gridSquare.style.backgroundColor = "black";
 
